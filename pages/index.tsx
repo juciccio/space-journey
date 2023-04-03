@@ -9,8 +9,8 @@ export default function Home() {
       camera={{
         fov: 45,
         near: 0.1,
-        far: 200,
-        position: [2.5, 4, 6],
+        far: 20,
+        position: [2.5, 4, 6]
       }}
     >
       <Experience />

@@ -1,16 +1,23 @@
+import { ScrollControls } from "@react-three/drei";
+import { Debug, Physics } from "@react-three/rapier";
 import Lights from "../lights";
 import Scene from "../scene";
+import Fog from "../scene/fog";
 import Ship from "../ship";
 
 export default function Experience() {
   return (
     <>
-      <color args={["#000"]} attach="background" />
       <Lights />
 
-      <Scene />
+      <ScrollControls pages={12} damping={0.1}>
+        <Physics>
+          <Scene />
+          <Ship />
 
-      <Ship />      
+          {/* <Debug /> */}
+        </Physics>
+      </ScrollControls>
     </>
   );
 }

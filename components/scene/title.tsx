@@ -2,7 +2,7 @@ import { Float, Text3D, useMatcapTexture } from "@react-three/drei";
 import * as THREE from "three";
 
 export default function SceneTitle() {
-  const [matcapTexture] = useMatcapTexture("CDC3B8_5A3F3C_67545A_8D7769", 256);
+  const [matcapTexture] = useMatcapTexture("161B1F_C7E0EC_90A5B3_7B8C9B", 256);
 
   matcapTexture.encoding = THREE.sRGBEncoding;
   matcapTexture.needsUpdate = true;
