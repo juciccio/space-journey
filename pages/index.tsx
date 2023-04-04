@@ -1,5 +1,6 @@
 import Experience from "@/components/experience";
 import { Canvas } from "@react-three/fiber";
+import { Perf } from "r3f-perf";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       }}
     >
       <Experience />
+      <Perf />
     </Canvas>
   );
 }
