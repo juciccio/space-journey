@@ -1,12 +1,13 @@
 import { Float, useAnimations, useGLTF, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { RigidBody } from "@react-three/rapier";
+import gsap from "gsap";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
 export default function Ship() {
   // ship
-  const shipRef = useRef(null);
+  const shipRef = useRef<any>(null);
   const xwing = useGLTF("/models/x-wing.glb");
   const animations = useAnimations(xwing.animations, xwing.scene);
 
@@ -23,9 +24,22 @@ export default function Ship() {
     body?.current?.setNextKinematicTranslation({ x: 0, y: 0, z: -amount });
   };
 
+  const end = (data: any) => {
+    if (data.offset >= 1) {
+      data.el.style.overflow = "hidden";
+
+      setTimeout(() => {
+        gsap.to(shipRef?.current?.rotation, { x: 0.5, duration: 1 });
+        gsap.to(shipRef?.current?.position, { y: 2.5, z: -0.5, duration: 1 });
+        gsap.to(shipRef?.current?.scale, { x: 0, y: 0, z: 0, duration: 1 });
+      }, 250);
+    }
+  };
+
   // Open wings
   useEffect(() => {
     if (animations?.actions["Take 001"]) {
+      animations.actions["Take 001"].startAt(-2);
       animations.actions["Take 001"].clampWhenFinished = true;
       animations.actions["Take 001"].setLoop(THREE.LoopOnce, 1);
       animations?.actions["Take 001"]?.play();
@@ -35,7 +49,7 @@ export default function Ship() {
       if (animations?.actions["Take 001"]) {
         animations.actions["Take 001"].paused = true;
       }
-    }, 5000);
+    }, 4000);
   }, [animations.actions]);
 
   // Scroll
@@ -56,11 +70,16 @@ export default function Ship() {
     smoothedCameraPosition.lerp(cameraPosition, 3 * delta);
     smoothedCameraTarget.lerp(cameraTarget, 3 * delta);
 
-    state.camera.position.copy(smoothedCameraPosition);
-    state.camera.lookAt(smoothedCameraTarget);
+    if (data.offset < 1) {
+      state.camera.position.copy(smoothedCameraPosition);
+      state.camera.lookAt(smoothedCameraTarget);
+    }
 
     // Scroll
     move(data.offset * 50);
+
+    // End
+    end(data);
   });
 
   return (

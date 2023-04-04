@@ -1,29 +1,25 @@
+import { Copy } from "@/types/texts";
 import { Float, Text } from "@react-three/drei";
-import { Vector3 } from "@react-three/fiber";
 
-interface CopyProps {
-  text: string;
-  position?: Vector3;
-}
-
-const Copy = ({ text, position = [0, 0, 0] }: CopyProps) => {
+const Copy = ({ text, position = [0, 0, 0] }: Copy) => {
   return (
-    <Float
-      speed={1}
-      rotationIntensity={0.1}
-      floatIntensity={0.1}
-      floatingRange={[-0.03, 0.03]}
-    >
-      <Text
-        font="/fonts/audiowide-all-400-normal.woff"
-        fontSize={0.07}
-        color="white"
-        maxWidth={1.4}
-        position={position}
+    <group position={position}>
+      <Float
+        speed={2}
+        rotationIntensity={0.5}
+        floatIntensity={0.5}
+        floatingRange={[-0.3, 0.3]}
       >
-        {text}
-      </Text>
-    </Float>
+        <Text
+          font="/fonts/audiowide-all-400-normal.woff"
+          fontSize={0.07}
+          color="white"
+          maxWidth={1.4}
+        >
+          {text}
+        </Text>
+      </Float>
+    </group>
   );
 };
 

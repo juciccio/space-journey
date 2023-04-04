@@ -1,8 +1,6 @@
-interface FogProps {
-  color?: string;
-}
+import { Fog } from "@/types/general";
 
-export default function SceneFog({ color = "#000" }: FogProps) {
+export default function SceneFog({ color = "#000" }: Fog) {
   return (
     <>
       <fog attach="fog" args={[color, 6, 10]} />

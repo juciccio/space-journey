@@ -1,17 +1,7 @@
+import { Model } from "@/types/models";
 import { Float, Gltf, useGLTF } from "@react-three/drei";
-import { Vector3 } from "@react-three/fiber";
 
-interface AsteroidProps {
-  model: string;
-  position?: Vector3;
-  scale?: number;
-}
-
-const Asteroid = ({
-  model,
-  position = [0, 0, 0],
-  scale = 0.1,
-}: AsteroidProps) => {
+const Asteroid = ({ model, position = [0, 0, 0], scale = 0.1 }: Model) => {
   return (
     <group position={position}>
       <Float rotationIntensity={5} floatIntensity={0.5} speed={2}>

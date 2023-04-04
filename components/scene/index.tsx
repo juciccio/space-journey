@@ -1,7 +1,11 @@
-import { Sparkles, Stars } from "@react-three/drei";
+import { Sparkles } from "@react-three/drei";
 import SceneAsteroids from "./asteroids";
 import SceneCopies from "./copies";
+import DamagedTieFighter from "./damaged-tie-fighter";
+import DeathStar from "./death-star";
+import Droids from "./droids";
 import SceneFog from "./fog";
+import Planet from "./planet";
 import SceneTitle from "./title";
 
 export default function Scene() {
@@ -23,6 +27,14 @@ export default function Scene() {
         speed={0}
         count={300}
       />
+
+      <DeathStar />
+
+      <DamagedTieFighter />
+
+      <Droids />
+
+      <Planet />
     </>
   );
 }
