@@ -1,3 +1,4 @@
+import End from "@/components/end";
 import Experience from "@/components/experience";
 import Intro from "@/components/intro";
 import { Canvas } from "@react-three/fiber";
@@ -23,6 +24,9 @@ export default function Home() {
 
       {/* Intro Screen */}
       <Intro />
+
+      {/* End Screen */}
+      <End />
 
       {/* Loader */}
     </>

@@ -12,7 +12,7 @@ const Copy = ({ text, position = [0, 0, 0] }: Copy) => {
       >
         <Text
           font="/fonts/audiowide-all-400-normal.woff"
-          fontSize={0.07}
+          fontSize={0.1}
           color="white"
           maxWidth={1.4}
         >
@@ -26,36 +26,21 @@ const Copy = ({ text, position = [0, 0, 0] }: Copy) => {
 export default function SceneCopies() {
   return (
     <>
+      <Copy text="Just scroll" position={[0, -0.5, 0]} />
       <Copy
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae
-        tellus quis lacus tincidunt condimentum. Vivamus in dolor eu sapien
-        lobortis efficitur. Curabitur aliquam ante mauris, et rhoncus erat
-        posuere vel. Sed velit risus, vulputate vel orci semper, hendrerit
-        vehicula diam"
+        text="This is a little experiment to test how to interact with the scroll in WebGL. Also, my first project with ThreeJs."
         position={[1.7, 2, -10]}
       />
       <Copy
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae
-        tellus quis lacus tincidunt condimentum. Vivamus in dolor eu sapien
-        lobortis efficitur. Curabitur aliquam ante mauris, et rhoncus erat
-        posuere vel. Sed velit risus, vulputate vel orci semper, hendrerit
-        vehicula diam"
+        text="The asteroids were made by me with Blender. All the other models are not mine. You can see the references to the authors at the end."
         position={[-1.2, 2, -20]}
       />
       <Copy
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae
-        tellus quis lacus tincidunt condimentum. Vivamus in dolor eu sapien
-        lobortis efficitur. Curabitur aliquam ante mauris, et rhoncus erat
-        posuere vel. Sed velit risus, vulputate vel orci semper, hendrerit
-        vehicula diam"
+        text="If you are looking to start learning ThreeJs or WebGL I recommend you to check out the ThreeJS Journey course."
         position={[1.7, 2, -30]}
       />
       <Copy
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae
-        tellus quis lacus tincidunt condimentum. Vivamus in dolor eu sapien
-        lobortis efficitur. Curabitur aliquam ante mauris, et rhoncus erat
-        posuere vel. Sed velit risus, vulputate vel orci semper, hendrerit
-        vehicula diam"
+        text="This is the stack I used to make this project: NextJS, React Three Fiber, Drei, ChakraUI, GSAP, Zustand"
         position={[-1.2, 2, -40]}
       />
     </>

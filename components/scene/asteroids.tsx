@@ -82,6 +82,65 @@ export default function SceneAsteroids() {
           scale={0.15}
         />
       </group>
+
+      <group position={[-2, 0, -25]}>
+        <Asteroid
+          model="/models/asteroid_01.glb"
+          position={[1, 1, 0]}
+          scale={0.05}
+        />
+        <Asteroid
+          model="/models/asteroid_01.glb"
+          position={[0, 0.5, 0]}
+          scale={0.06}
+        />
+        <Asteroid
+          model="/models/asteroid_02.glb"
+          position={[0, 0, 1]}
+          scale={0.08}
+        />
+        <Asteroid
+          model="/models/asteroid_02.glb"
+          position={[0, 1, 0]}
+          scale={0.07}
+        />
+        <Asteroid
+          model="/models/asteroid_03.glb"
+          position={[-1, -1, -1]}
+          scale={0.2}
+        />
+      </group>
+
+      <group position={[-2, 0, -36]}>
+        <Asteroid
+          model="/models/asteroid_01.glb"
+          position={[1, 2, 0]}
+          scale={0.1}
+        />
+        <Asteroid
+          model="/models/asteroid_02.glb"
+          position={[0, 1, 0]}
+          scale={0.15}
+        />
+        <Asteroid
+          model="/models/asteroid_03.glb"
+          position={[-1, -1, -1]}
+          scale={0.12}
+        />
+      </group>
+
+      <group position={[3, 0, -43]}>
+        <Asteroid
+          model="/models/asteroid_02.glb"
+          position={[0, 1, 0]}
+          scale={0.3}
+        />
+        <Asteroid
+          model="/models/asteroid_01.glb"
+          position={[0, -1, -1]}
+          scale={0.5}
+        />
+      </group>
     </>
   );
 }

@@ -35,9 +35,11 @@ export default function Ship() {
         gsap.to(shipRef?.current?.rotation, { x: 0.5, duration: 1 });
         gsap.to(shipRef?.current?.position, { y: 2.5, z: -0.5, duration: 1 });
         gsap.to(shipRef?.current?.scale, { x: 0, y: 0, z: 0, duration: 1 });
-
-        endExperience();
       }, 250);
+
+      setTimeout(() => {
+        endExperience();
+      }, 750);
     }
   };
 
@@ -107,7 +109,7 @@ export default function Ship() {
             ref={shipRef}
             object={xwing.scene}
             scale={0.016}
-            position={[0.42, -0.5, 1]}
+            position={[0, -0.5, 1]}
             rotation={[-0.3, Math.PI, 0]}
           />
         </Float>
