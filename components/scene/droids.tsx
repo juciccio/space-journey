@@ -2,7 +2,7 @@ import { Model } from "@/types/models";
 import { useBreakpointValue } from "@chakra-ui/react";
 import { Float, Gltf, useGLTF } from "@react-three/drei";
 
-const Droid = ({ model, position = [0, 0, 0], scale = 0.01 }: Model) => {
+export const Droid = ({ model, position = [0, 0, 0], scale = 0.01 }: Model) => {
   return (
     <group position={position}>
       <Float rotationIntensity={5} floatIntensity={0.5} speed={2}>

@@ -1,6 +1,5 @@
 import { useBreakpointValue } from "@chakra-ui/react";
-import { EffectComposer, Noise } from "@react-three/postprocessing";
-import { BlendFunction } from "postprocessing";
+import { EffectComposer, TiltShift } from "@react-three/postprocessing";
 
 export default function Effects() {
   const isMobile = useBreakpointValue({ base: true, lg: false });
@@ -10,7 +9,14 @@ export default function Effects() {
   } else {
     return (
       <EffectComposer>
-        <Noise opacity={0.5} blendFunction={BlendFunction.MULTIPLY} />
+        <TiltShift
+          offset={0}
+          rotation={0}
+          focusArea={1}
+          feather={1}
+          bias={0.1}
+          opacity={0.2}
+        />
       </EffectComposer>
     );
   }
