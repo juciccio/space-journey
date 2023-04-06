@@ -5,6 +5,7 @@ import Loader from "@/components/loader";
 import { useExperience } from "@/stores/useExperience";
 import { Preload } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { NextSeo } from "next-seo";
 import { Suspense } from "react";
 
 export default function Home() {
@@ -12,6 +13,17 @@ export default function Home() {
 
   return (
     <>
+      <NextSeo
+        title="Space Journey"
+        description="A little experiment with ThreeJS into the galaxy"
+        canonical="https://spacejourney.vercel.app/"
+        openGraph={{
+          url: "https://spacejourney.vercel.app/",
+          title: "Space Journey",
+          description: "A little experiment with ThreeJS into the galaxy",
+        }}
+      />
+
       {/* Whole 3D experience */}
       <Canvas
         className={`main-canvas ${status === "loading" ? "hide" : ""}`}
