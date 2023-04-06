@@ -3,9 +3,9 @@ import { DefaultSeoProps } from 'next-seo';
 const seo:DefaultSeoProps = {
   title: 'Space Journey',
   description: 'A little experiment with ThreeJS into the galaxy.',
-  canonical: 'https://space-journey.vercel.app/',
+  canonical: 'https://spacejourney.vercel.app/',
   openGraph: {
-    url: 'https://space-journey.vercel.app/',
+    url: 'https://spacejourney.vercel.app/',
     title: 'Space Journey',
     description: 'A little experiment with ThreeJS into the galaxy.',
     type: 'website',

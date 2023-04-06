@@ -9,9 +9,9 @@ export default function Custom404() {
   const updateMeta = {
     title: "Space Journey",
     description: "404 page",
-    canonical: "https://space-journey.vercel.app",
+    canonical: "https://spacejourney.vercel.app",
     openGraph: {
-      url: "https://space-journey.vercel.app",
+      url: "https://spacejourney.vercel.app",
       title: "Space Journey",
       description: "404 page",
     },
