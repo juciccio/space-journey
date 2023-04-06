@@ -1,3 +1,4 @@
+import { useExperience } from "@/stores/useExperience";
 import { Float, useAnimations, useGLTF, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { RigidBody } from "@react-three/rapier";
@@ -6,6 +7,8 @@ import React, { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
 export default function Ship() {
+  const endExperience = useExperience((state) => state.end);
+
   // ship
   const shipRef = useRef<any>(null);
   const xwing = useGLTF("/models/x-wing.glb");
@@ -32,6 +35,8 @@ export default function Ship() {
         gsap.to(shipRef?.current?.rotation, { x: 0.5, duration: 1 });
         gsap.to(shipRef?.current?.position, { y: 2.5, z: -0.5, duration: 1 });
         gsap.to(shipRef?.current?.scale, { x: 0, y: 0, z: 0, duration: 1 });
+
+        endExperience();
       }, 250);
     }
   };
