@@ -24,8 +24,9 @@ export default function Intro() {
       opacity={status === "intro" ? 1 : 0}
       pointerEvents={status === "intro" ? "visible" : "none"}
     >
+      {/* @ts-ignore */}
       <VStack spacing={10}>
-        <Heading as="h1" fontSize="xl">
+        <Heading fontSize="xl">
           Ready when you are
         </Heading>
         <Button fontWeight="light" onClick={onStart}>

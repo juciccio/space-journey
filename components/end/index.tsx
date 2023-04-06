@@ -35,7 +35,8 @@ export default function End() {
       opacity={status === "end" ? 1 : 0}
       pointerEvents={status === "end" ? "visible" : "none"}
     >
-      <VStack
+      {/* @ts-ignore */}
+      <VStack         
         backdropFilter="blur(0.3rem)"
         spacing={10}
         overflow="hidden"
@@ -46,7 +47,7 @@ export default function End() {
         w="full"
         maxW={{ base: "90vw", lg: "50vw" }}
       >
-        <Heading as="h1" fontSize={{ base: "lg", lg: "xl" }} textAlign="center">
+        <Heading fontSize={{ base: "lg", lg: "xl" }} textAlign="center">
           Part of the journey is the end
         </Heading>
         <Stack

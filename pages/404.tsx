@@ -9,9 +9,9 @@ export default function Custom404() {
   const updateMeta = {
     title: "Space Journey",
     description: "404 page",
-    canonical: "https://spacejourney.vercel.app",
+    canonical: "https://space-journey.vercel.app",
     openGraph: {
-      url: "https://spacejourney.vercel.app",
+      url: "https://space-journey.vercel.app",
       title: "Space Journey",
       description: "404 page",
     },
@@ -45,9 +45,11 @@ export default function Custom404() {
         zIndex="sticky"
         p={7}
       >
+        {/* @ts-ignore */}
         <VStack spacing={10}>
           <Heading textAlign="center">Lost in the space?</Heading>
           <Link href="/" passHref legacyBehavior>
+            {/* @ts-ignore */}
             <Button as="a" w={{ base: "full", lg: "auto" }}>
               Back to your ship
             </Button>

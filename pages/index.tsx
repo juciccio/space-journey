@@ -16,9 +16,9 @@ export default function Home() {
       <NextSeo
         title="Space Journey"
         description="A little experiment with ThreeJS into the galaxy"
-        canonical="https://spacejourney.vercel.app/"
+        canonical="https://space-journey.vercel.app/"
         openGraph={{
-          url: "https://spacejourney.vercel.app/",
+          url: "https://space-journey.vercel.app/",
           title: "Space Journey",
           description: "A little experiment with ThreeJS into the galaxy",
         }}
