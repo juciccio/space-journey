@@ -1,4 +1,5 @@
 import { useExperience } from "@/stores/useExperience";
+import { useBreakpointValue } from "@chakra-ui/react";
 import { Float, useAnimations, useGLTF, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { RigidBody } from "@react-three/rapier";
@@ -7,6 +8,8 @@ import React, { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
 export default function Ship() {
+  // store managment
+  const status = useExperience((state) => state.status);
   const endExperience = useExperience((state) => state.end);
 
   // ship
@@ -63,6 +66,7 @@ export default function Ship() {
   const data = useScroll();
 
   useFrame((state, delta) => {
+    if (status === 'end') return;
     // Camera
     const bodyPosition = body.current.translation();
     const cameraPosition = new THREE.Vector3();
@@ -89,6 +93,9 @@ export default function Ship() {
     end(data);
   });
 
+  // responsiveness
+  const isMobile = useBreakpointValue({ base: true, lg: false });
+
   return (
     <Suspense
       fallback={
@@ -108,7 +115,7 @@ export default function Ship() {
           <primitive
             ref={shipRef}
             object={xwing.scene}
-            scale={0.016}
+            scale={isMobile ? 0.01 : 0.016}
             position={[0, -0.5, 1]}
             rotation={[-0.3, Math.PI, 0]}
           />

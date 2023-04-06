@@ -16,8 +16,12 @@ export const styles = {
         position: 'fixed !important',
         left: 0,
         top: 0,
-        height: "100%",
-        width: "100%",
+        height: "full",
+        width: "full",
+        transition: '0.3s opacity',
+        '&.hide': {
+          opacity: 0
+        }
       },
     },
   },

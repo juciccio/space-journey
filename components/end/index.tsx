@@ -7,7 +7,6 @@ import {
   ListItem,
   Link,
   Stack,
-  UnorderedList,
   VStack,
   List,
 } from "@chakra-ui/react";
@@ -40,22 +39,32 @@ export default function End() {
         backdropFilter="blur(0.3rem)"
         spacing={10}
         overflow="hidden"
-        px={20}
-        py={12}
+        px={{ base: 7, lg: 20 }}
+        py={{ base: 10, lg: 12 }}
         rounded="xl"
         transform="translateZ(0)"
         w="full"
-        maxW="50vw"
+        maxW={{ base: "90vw", lg: "50vw" }}
       >
-        <Heading as="h1" fontSize="xl">
+        <Heading as="h1" fontSize={{ base: "lg", lg: "xl" }} textAlign="center">
           Part of the journey is the end
         </Heading>
-        <Stack direction={{ base: "column", lg: "row" }} justifyContent="space-between" w="full">
-          <VStack alignItems="flex-start" spacing={2}>
-            <Heading fontWeight="medium" fontSize="lg">
+        <Stack
+          alignItems={{ base: "flex-start", lg: "center" }}
+          direction={{ base: "column", lg: "row" }}
+          justifyContent="space-between"
+          spacing={{ base: 10, lg: 2 }}
+          w="full"
+        >
+          <VStack alignItems="flex-start" spacing={3}>
+            <Heading fontWeight="medium" fontSize={{ base: "md", lg: "lg" }}>
               Models
             </Heading>
-            <List fontSize="sm" fontWeight="light">
+            <List
+              fontSize={{ base: "xs", lg: "sm" }}
+              fontWeight="light"
+              spacing={{ base: 2, lg: 1 }}
+            >
               <ListItem>
                 <Link
                   color="blue.200"
@@ -110,11 +119,16 @@ export default function End() {
           </VStack>
 
           <VStack spacing={6}>
-            <VStack alignItems="flex-start" spacing={2}>
-              <Heading fontWeight="medium" fontSize="lg">
-                My Links
+            <VStack alignItems="flex-start" spacing={3}>
+              <Heading fontWeight="medium" fontSize={{ base: "md", lg: "lg" }}>
+                My links
               </Heading>
-              <List fontSize="sm" fontWeight="light" color="blue.200">
+              <List
+                color="blue.200"
+                fontSize={{ base: "xs", lg: "sm" }}
+                fontWeight="light"
+                spacing={{ base: 2, lg: 1 }}
+              >
                 <ListItem>
                   <Link
                     href="https://www.instagram.com/juciccio/"
@@ -148,7 +162,12 @@ export default function End() {
             </VStack>
           </VStack>
         </Stack>
-        <Button fontWeight="light" onClick={onRestart}>
+
+        <Button
+          fontWeight="light"
+          w={{ base: "full", lg: "auto" }}
+          onClick={onRestart}
+        >
           Restart
         </Button>
       </VStack>

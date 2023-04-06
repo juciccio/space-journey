@@ -1,9 +1,11 @@
+import { useExperience } from "@/stores/useExperience";
 import { Center, Progress, Text, VStack } from "@chakra-ui/react";
 import { useProgress } from "@react-three/drei";
 import { useEffect, useState } from "react";
 
 export default function Loader() {
   const { active, progress } = useProgress();
+  const ready = useExperience((state) => state.ready);
 
   const [amount, setAmount] = useState<number>(0);
   const [isDone, setIsDone] = useState<boolean>(false);
@@ -14,7 +16,11 @@ export default function Loader() {
 
   useEffect(() => {
     setIsDone(active);
-  }, [active]);
+
+    if (active) {
+      ready();
+    }
+  }, [active, ready]);
 
   return (
     <Center
