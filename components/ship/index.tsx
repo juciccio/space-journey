@@ -46,7 +46,7 @@ export default function Ship() {
   // Open wings
   useEffect(() => {
     if (animations?.actions["Take 001"]) {
-      animations.actions["Take 001"].startAt(-2);
+      animations.actions["Take 001"].startAt(-3);
       animations.actions["Take 001"].clampWhenFinished = true;
       animations.actions["Take 001"].setLoop(THREE.LoopOnce, 1);
       animations?.actions["Take 001"]?.play();
@@ -56,7 +56,7 @@ export default function Ship() {
       if (animations?.actions["Take 001"]) {
         animations.actions["Take 001"].paused = true;
       }
-    }, 4000);
+    }, 2000);
   }, [animations.actions]);
 
   // Scroll

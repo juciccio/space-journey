@@ -1,8 +1,10 @@
 import End from "@/components/end";
 import Experience from "@/components/experience";
 import Intro from "@/components/intro";
+import Loader from "@/components/loader";
+import { Preload } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Perf } from "r3f-perf";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -18,8 +20,10 @@ export default function Home() {
           position: [2.5, 4, 6],
         }}
       >
-        <Experience />
-        <Perf />
+        <Suspense fallback={null}>
+          <Experience />
+          <Preload all />
+        </Suspense>
       </Canvas>
 
       {/* Intro Screen */}
@@ -29,6 +33,7 @@ export default function Home() {
       <End />
 
       {/* Loader */}
+      <Loader />
     </>
   );
 }
